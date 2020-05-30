@@ -1,15 +1,10 @@
 package com.example.scenedemo.home
 
-import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.Observer
-import com.bytedance.scene.group.GroupScene
 import com.bytedance.scene.ktx.activityViewModels
 import com.example.scenedemo.R
+import com.example.scenedemo.base.BaseScene
 import com.example.scenedemo.bottombar.view.BottomBarScene
 import com.example.scenedemo.chat.view.ChatScene
 import com.example.scenedemo.mic.view.MicScene
@@ -17,7 +12,7 @@ import com.example.scenedemo.reward.view.RewardScene
 import com.example.scenedemo.reward.viewmodel.RewardViewModel
 import com.example.scenedemo.topbar.view.TopBarScene
 
-class HomeScene : GroupScene() {
+class HomeScene : BaseScene() {
 
     private var vRoot: View? = null
 
@@ -29,27 +24,19 @@ class HomeScene : GroupScene() {
 
     private val mRewardViewModel: RewardViewModel by activityViewModels()
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup,
-        savedInstanceState: Bundle?
-    ): ViewGroup {
-        return inflater.inflate(R.layout.layout_home, null, false) as ConstraintLayout
+    override fun onInflaterViewId(): Int {
+        return R.layout.layout_home
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        vRoot = findViewById(R.id.root_view)
+    override fun onBindView(view: View?) {
+        vRoot = view?.findViewById(R.id.root_view)
 
-        add(R.id.top_container, vTopBarScene, "TopBar")
-        add(R.id.reward_container, vRewardScene, "Reward")
-        add(R.id.mic_container, vMicScene, "MicList")
-        add(R.id.chat_container, vChatScene, "ChatList")
-        add(R.id.bottom_container, vBottomScene, "Bottom")
+        addChildScene(R.id.top_container, vTopBarScene, false)
+        addChildScene(R.id.reward_container, vRewardScene, true)
+        addChildScene(R.id.mic_container, vMicScene, false)
+        addChildScene(R.id.chat_container, vChatScene, false)
+        addChildScene(R.id.bottom_container, vBottomScene, false)
 
-
-        hide(vRewardScene)
         vRoot?.setOnClickListener {
             mRewardViewModel.setShowReward(false)
         }
@@ -57,7 +44,9 @@ class HomeScene : GroupScene() {
         vRewardScene.view.setOnClickListener {
 
         }
+    }
 
+    override fun bindObserver() {
         mRewardViewModel.getShowReward().observe(this, Observer { isShow ->
             if (isShow) {
                 show(vRewardScene, R.anim.base_slide_bottom_up)
@@ -65,6 +54,14 @@ class HomeScene : GroupScene() {
                 hide(vRewardScene, R.anim.base_slide_bottom_down)
             }
         })
+    }
+
+    override fun onBackPress(): Boolean {
+        if (vRewardScene.isVisible) {
+            mRewardViewModel.setShowReward(false)
+            return true
+        }
+        return super.onBackPress()
     }
 
 }

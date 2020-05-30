@@ -1,6 +1,7 @@
 package com.example.scenedemo
 
 import android.os.Bundle
+import android.view.KeyEvent
 import com.bytedance.scene.Scene
 import com.example.scenedemo.base.BaseSceneActivity
 import com.example.scenedemo.home.HomeScene
@@ -19,5 +20,9 @@ class MainActivity : BaseSceneActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }
