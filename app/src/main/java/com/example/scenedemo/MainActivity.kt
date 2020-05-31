@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.KeyEvent
 import com.bytedance.scene.Scene
 import com.example.scenedemo.base.BaseSceneActivity
-import com.example.scenedemo.home.HomeScene
+import com.example.scenedemo.room.view.home.HomeScene
 
 
 class MainActivity : BaseSceneActivity() {

@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -37,6 +36,7 @@ dependencies {
     implementation 'com.bytedance.scene:scene-ktx:1.0.4'
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
     implementation "androidx.lifecycle:lifecycle-livedata:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.2.0"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.5'
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'

@@ -11,6 +11,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
             android:theme="@style/BaseAppTheme">
+        </activity>
+        <activity android:name=".room.RoomActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
