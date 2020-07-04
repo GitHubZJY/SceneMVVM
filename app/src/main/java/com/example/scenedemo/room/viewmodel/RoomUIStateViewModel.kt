@@ -2,8 +2,8 @@ package com.example.scenedemo.room.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
-import com.example.scenedemo.base.BaseViewModel
 import com.example.scenedemo.room.view.bottombar.enums.FooterStates
+import com.zjy.baselib.base.BaseViewModel
 
 class RoomUIStateViewModel(application: Application) : BaseViewModel(application){
 

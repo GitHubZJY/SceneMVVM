@@ -1,4 +1,4 @@
-package com.example.scenedemo.base
+package com.zjy.baselib.base
 
 import android.os.Bundle
 import androidx.annotation.Nullable

@@ -1,4 +1,4 @@
-package com.example.scenedemo.base
+package com.zjy.baselib.base
 
 import android.app.Application
 import android.graphics.drawable.Drawable

@@ -1,10 +1,9 @@
 package com.example.scenedemo
 
 import android.os.Bundle
-import android.view.KeyEvent
 import com.bytedance.scene.Scene
-import com.example.scenedemo.base.BaseSceneActivity
 import com.example.scenedemo.room.view.home.HomeScene
+import com.zjy.baselib.base.BaseSceneActivity
 
 
 class MainActivity : BaseSceneActivity() {

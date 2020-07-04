@@ -1,4 +1,4 @@
-package com.example.scenedemo.base
+package com.zjy.baselib.base
 
 import android.app.Activity
 import android.view.View

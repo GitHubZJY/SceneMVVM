@@ -16,6 +16,10 @@ class RewardScene : BaseRoomScene() {
 
     }
 
+    override fun setData() {
+        mRewardViewModel.initRewardData()
+    }
+
     override fun bindObserver() {
         mRewardViewModel.getRewardData().observe(this, Observer {
 

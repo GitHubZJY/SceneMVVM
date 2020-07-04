@@ -2,7 +2,7 @@ package com.example.scenedemo.create
 
 import android.view.View
 import com.example.scenedemo.R
-import com.example.scenedemo.base.BaseScene
+import com.zjy.baselib.base.BaseScene
 
 
 class CreateChatScene : BaseScene() {

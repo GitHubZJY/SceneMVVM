@@ -1,4 +1,4 @@
-package com.example.scenedemo.base
+package com.zjy.baselib.base
 
 import android.app.Activity
 import android.graphics.drawable.Drawable
@@ -12,7 +12,7 @@ import com.bytedance.scene.interfaces.PushOptions
 import com.bytedance.scene.ktx.addAndHide
 import com.bytedance.scene.navigation.OnBackPressedListener
 import com.bytedance.scene.ui.template.SwipeBackGroupScene
-import com.example.scenedemo.R
+import com.zjy.baselib.R
 
 abstract class BaseScene : SwipeBackGroupScene(), IUIHierarchy, IResourceHelper {
 

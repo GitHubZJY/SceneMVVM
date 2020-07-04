@@ -1,8 +1,8 @@
 package com.example.scenedemo.room
 
 import com.bytedance.scene.Scene
-import com.example.scenedemo.base.BaseSceneActivity
 import com.example.scenedemo.room.view.home.HomeScene
+import com.zjy.baselib.base.BaseSceneActivity
 
 
 class RoomActivity : BaseSceneActivity() {
